@@ -52,10 +52,26 @@ class ListArray : public List<T> {
 			n++;}
 	}
 	virtual void  append(T e) override{
-		arr[n-1]=e;
+		if(size() == max)
+             resize(size()*2);
+
+      arr[n] = e;
+      n++;
+    
 	}
 	virtual  void prepend (T e) override{
-		arr[0]=e;}
+		 if(size() == max)
+	     resize(size()*2);
+      else{
+	      for(int i = n; i > 0; i --){
+		      arr[i] = arr[i-1];
+
+	      }
+arr[0] = e;
+	      n++;
+      } 
+    }
+    
 	 virtual  T remove (int pos) override{
 		 T aux;
 		  if(pos > size()-1 || pos < 0){
