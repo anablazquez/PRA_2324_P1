@@ -1,10 +1,10 @@
 #include <iostream>
-#include "ListLinked.h"
+#include "ListArray.h"
 
 int main(){
     std::cout << std::boolalpha; // configuramos cout para mostrar true/false en lugar de 0/1.
 
-ListLinked<int> list;
+    ListArray<int> list;
 
     std::cout << list << std::endl; 
     std::cout << "size(): " << list.size() << std::endl; 
