@@ -1,7 +1,7 @@
 #include <ostream>
 #include "List.h"
 #include "Node.h"
-
+ using namespace std;
 template <typename T>
 
 class ListLinked : public List<T>{
@@ -101,7 +101,7 @@ public:
   
   
   T remove(int pos) override{
-            if (pos < 0 || pos >= n) { throw out_of_range("Posición no válida del array\n"); }
+            if (pos < 0 || pos >= n) { throw std:: out_of_range("Posición no válida del array\n"); }
             else{
                 T x;
                 if(pos == 0){
