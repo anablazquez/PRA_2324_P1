@@ -56,7 +56,7 @@ public:
   }
   virtual  void prepend(T e) override{
     Node <T> *aux = new Node<T>(e, first);//se inserta el elemento e y despues ira el fisrt
-    first = aux;//guardamos contenido d aux en fisrt
+    first = aux;//ahora first apunta al nuevo
     n++;
     }
   
@@ -70,8 +70,8 @@ public:
       for(int i = 1; i< size(); i++){	 
 	act = act->next;	//ahora el puntero apunta al sigueinte de fisrt, y despues al siguiente del sigueinte es como un act++ todo el rato
       }//llegas hasta el PENULTIMO
-      Node<T>* aux = new Node<T>(e , act->next);//insertas elemento al final, con el contenido de act->next 
-      act->next = aux;
+      Node<T>* aux = new Node<T>(e , act->next);//  crear un nuevo nodo con el valor e y apuntar al siguiente nodo del actual
+      act->next = aux;// Actualizar el puntero next del último nodo para que apunte al nuevo nodo
       
     }
     n++;//aumentas contador
